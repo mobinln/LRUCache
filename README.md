@@ -97,14 +97,6 @@ Adds a new key-value pair or updates an existing one. If the cache is at capacit
 
 **Time Complexity:** O(1)
 
-#### `Size() int`
-
-Returns the current number of items in the cache.
-
-**Returns:**
-
-- Current cache size
-
 #### `Display()`
 
 Prints the current state of the cache (for debugging purposes).
