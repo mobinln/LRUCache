@@ -28,7 +28,7 @@ import "fmt"
 
 func main() {
     // Create a string cache with capacity of 3
-    cache := NewLRUCache[int, string](3)
+    cache := Constructor[int, string](3)
 
     // Add items
     cache.Put(1, "hello")
@@ -52,7 +52,7 @@ func main() {
 
 ### Constructor
 
-#### `NewLRUCache[K, V](capacity int) *LRUCache[K, V]`
+#### `Constructor[K, V](capacity int) *LRUCache[K, V]`
 
 Creates a new LRU cache with the specified capacity.
 
@@ -115,7 +115,7 @@ Prints the current state of the cache (for debugging purposes).
 
 ```go
 // Integer keys, string values
-stringCache := NewLRUCache[int, string](3)
+stringCache := Constructor[int, string](3)
 stringCache.Put(1, "hello")
 stringCache.Put(2, "world")
 
@@ -134,7 +134,7 @@ type User struct {
 }
 
 // String keys, User struct values
-userCache := NewLRUCache[string, User](10)
+userCache := Constructor[string, User](10)
 userCache.Put("user1", User{ID: 1, Name: "Alice", Age: 25})
 
 if user, found := userCache.Get("user1"); found {
@@ -146,7 +146,7 @@ if user, found := userCache.Get("user1"); found {
 
 ```go
 // String keys and values
-dictCache := NewLRUCache[string, string](100)
+dictCache := Constructor[string, string](100)
 dictCache.Put("en", "hello")
 dictCache.Put("es", "hola")
 dictCache.Put("fr", "bonjour")
@@ -156,7 +156,7 @@ dictCache.Put("fr", "bonjour")
 
 ```go
 // Integer keys and values
-intCache := NewLRUCache[int, int](5)
+intCache := Constructor[int, int](5)
 intCache.Put(1, 100)
 intCache.Put(2, 200)
 ```
